@@ -186,6 +186,7 @@ pub fn size_bytes(val: &Bson) -> usize {
         // * subtype (1 byte)
         // * number of UTF-8 bytes
         Bson::Symbol(s) => 4 + 1 + s.len(),
+        Bson::Decimal128(_) => 16,
     }
 }
 
